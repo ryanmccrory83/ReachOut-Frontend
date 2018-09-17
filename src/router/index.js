@@ -13,7 +13,7 @@ export default new Router({
   base: __dirname,
   routes: [
     {
-      path: '/',
+      path: '/login',
       name: 'Login',
       component: Login,
     },
