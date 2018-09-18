@@ -1,21 +1,10 @@
 <template>
-  <div>
-    <div>
-      <h2>Search and add a pin</h2>
-      <label>
-        <gmap-autocomplete
-          @place_changed="setPlace">
-        </gmap-autocomplete>
-        <button @click="addMarker">Add</button>
-      </label>
-      <br/>
-
-    </div>
-    <br>
+  <div class="map-container">
     <gmap-map
       :center="center"
-      :zoom="12"
-      style="width:100%;  height: 400px;"
+      :zoom="10"
+      style="width:30vw;  height: 40vh;"
+      class="gmap"
     >
       <gmap-marker
         :key="index"
@@ -24,6 +13,17 @@
         @click="center=m.position"
       ></gmap-marker>
     </gmap-map>
+    <br>
+    <div>
+      <label>
+        <gmap-autocomplete
+          @place_changed="setPlace">
+        </gmap-autocomplete>
+        <button @click="addMarker" class="marker-button">Add Marker</button>
+      </label>
+      <br/>
+
+    </div>
   </div>
 </template>
 
@@ -34,7 +34,7 @@ export default {
     return {
       // default to Montreal to keep it simple
       // change this to whatever makes sense
-      center: { lat: 45.508, lng: -73.587 },
+      center: { lat: 39.7392, lng: -104.9903 },
       markers: [],
       places: [],
       currentPlace: null
@@ -75,5 +75,15 @@ export default {
 </script>
 
 <style>
-
+.map-container {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+.gmap {
+    justify-content: center;
+}
+.marker-button {
+  margin-top: 2vh;
+}
 </style>
