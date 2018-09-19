@@ -7,22 +7,33 @@
             ryanmccrory83: Hello!
             user02: Hi!
         </textarea>
-        <button type="submit" class="contact-button">Add Contact</button>
+        <b-button v-b-modal.contact-modal class="contact-button">Add Contact</b-button>
         <MapContainer />
+        <AddContactModal />
     </div>
 </template>
 
 <script>
+
 import MapContainer from '../components/MapContainer.vue'
+import AddContactModal from '../components/AddContactModal'
 export default {
     name: 'Chats',
     components: {
-        MapContainer
+        MapContainer,
+        AddContactModal
+    },
+    methods: {
+        showModal () {
+            this.$refs.myModalRef.show()
+        }
     }
 }
+
 </script>
 
 <style>
+
 .back-to-home-container {
     margin-top: 2vh;
 }

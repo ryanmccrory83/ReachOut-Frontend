@@ -5,7 +5,7 @@
             <h1 class="login-h1">Welcome to ReachOut</h1>
             <div class="login-buttons">
                 <a href="" class="login-button">Login</a>
-                <a href="" class="sign-out-button">Sign In</a>
+                <a href="" class="sign-out-button">Sign Up</a>
             </div>
             
         </div>
@@ -51,10 +51,12 @@ export default {
 .login-buttons {
     display: flex;
     flex-flow: column wrap;
-    align-items: space-between;
+    align-items: center space-between;
     font-weight: bolder;
 }
 .login-button {
+    display: flex;
+    justify-content: center;
     /* border: 1px solid black; */
     border-radius: 5em;
     margin: 2em 2em 2em 2em;
