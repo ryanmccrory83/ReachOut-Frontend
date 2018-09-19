@@ -6,6 +6,7 @@ import router from './router';
 import Login from './Views/Login';
 import Home from './Views/Home';
 import * as VueGoogleMaps from "vue2-google-maps";
+import BootstrapVue from 'bootstrap-vue'
 
 Vue.use(VueGoogleMaps, {
   load: {
@@ -13,6 +14,8 @@ Vue.use(VueGoogleMaps, {
     libraries: "places" // necessary for places input
   }
 });
+
+Vue.use(BootstrapVue);
 
 Vue.config.productionTip = false
 

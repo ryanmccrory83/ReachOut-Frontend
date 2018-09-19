@@ -1,4 +1,5 @@
 
+
 <template>
   <div>
     <nav class="navbar navbar-default">
@@ -6,7 +7,7 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="#">Auth0 - Vue</a>
 
-          <router-link :to="'/'"
+          <router-link :to="'/home'"
             class="btn btn-primary btn-margin">
               Home
           </router-link>
@@ -39,7 +40,7 @@
 </template>
 
 <script>
-
+import auth0 from 'auth0-js'
 import AuthService from './auth/AuthService'
 
 const auth = new AuthService()

@@ -4,6 +4,7 @@ import Login from '../Views/Login';
 import Home from '../Views/Home';
 import Deploy from '../Views/Deploy';
 import Chats from '../Views/Chats';
+import Callback from '../components/Callback';
 
 
 Vue.use(Router);
@@ -32,5 +33,10 @@ export default new Router({
       name: 'Chats',
       component: Chats,
     },
+    {
+      path: '/callback',
+      name: 'Callback',
+      component: Callback
+    }
   ],
 })
