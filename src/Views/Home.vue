@@ -1,6 +1,6 @@
 <template>
     <div class="home-container">
-        <div>
+        <div class="logo-container">
             <img src="../assets/ReachOutLogo.png" class="home-logo" alt="">
         </div>
         <div class="links">
@@ -31,6 +31,10 @@ export default {
     width: 100vw;
     height: 100vh;
 }
+.logo-container {
+    display: flex;
+    justify-content: center;
+}
 .links {
     display: flex;
     flex-flow: column wrap;
@@ -53,7 +57,7 @@ export default {
     letter-spacing: .1em;
 }
 .home-logo {
-    width: 10vw;
+    width: 15vw;
 }
 .log-out-button {
     height: 5vh;
