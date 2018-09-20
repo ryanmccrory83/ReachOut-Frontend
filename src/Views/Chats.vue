@@ -3,10 +3,7 @@
         <div class="back-to-home-container">
             <a href="./Home" class="back-to-home">Back to Home</a>
         </div>
-        <textarea class="message-board">
-            ryanmccrory83: Hello!
-            user02: Hi!
-        </textarea>
+        <ChatGroup />
         <b-button v-b-modal.contact-modal class="contact-button">Add Contact</b-button>
         <MapContainer />
         <AddContactModal />
@@ -15,11 +12,13 @@
 
 <script>
 
+import ChatGroup from '../components/ChatGroup.vue'
 import MapContainer from '../components/MapContainer.vue'
 import AddContactModal from '../components/AddContactModal'
 export default {
     name: 'Chats',
     components: {
+        ChatGroup,
         MapContainer,
         AddContactModal
     },
