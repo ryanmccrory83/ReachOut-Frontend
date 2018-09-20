@@ -5,15 +5,15 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">Auth0 - Vue</a>
+          <!-- <a class="navbar-brand" href="#">Auth0 - Vue</a>
 
           <router-link :to="'/home'"
             class="btn btn-primary btn-margin">
               Home
-          </router-link>
+          </router-link> -->
 
           <button
-            class="btn btn-primary btn-margin"
+            class="log-out-button"
             v-if="!authenticated"
             @click="login()">
               Log In
@@ -66,7 +66,14 @@ export default {
 </script>
 
 <style>
-/* @import '../node_modules/bootstrap/dist/css/bootstrap.css'; */
+.log-out-button {
+    height: 5vh;
+    width: 10vw;
+    margin-top: 5vh;
+    box-shadow: .5em .5em .1em black;
+    border-radius: 5em;
+    background-image: radial-gradient(white, blue);
+}
 </style>
 
 .btn-margin {
