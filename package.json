@@ -23,8 +23,10 @@
     "morgan": "^1.9.1",
     "nodemon": "^1.18.4",
     "pg": "^7.4.3",
+    "socket.io-client": "^2.1.1",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
+    "vue-socket.io": "^2.1.1-b",
     "vue2-google-maps": "^0.10.2"
   },
   "devDependencies": {
