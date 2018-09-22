@@ -5,6 +5,7 @@ import App from './App';
 import router from './router';
 import Login from './Views/Login';
 import Home from './Views/Home';
+import Contacts from './Views/Contacts'
 import * as VueGoogleMaps from "vue2-google-maps";
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -27,6 +28,7 @@ new Vue({
   router,
   Login,
   Home,
+  Contacts,
   components: { App },
   template: '<App/>'
 })
