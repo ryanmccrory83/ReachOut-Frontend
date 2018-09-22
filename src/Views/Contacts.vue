@@ -18,7 +18,7 @@ export default {
             // name: 'Contacts',
             reachoutURL:
                 "https://reachout-backend.herokuapp.com/user/",
-            userData: null;
+            userData: null,
         }
     },
     mounted() {
