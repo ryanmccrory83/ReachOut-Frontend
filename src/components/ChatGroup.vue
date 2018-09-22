@@ -29,6 +29,7 @@
 
 <script>
 import io from 'socket.io-client';
+var socketURL = 'localhost:3001' || 'https://reachout-91799.firebaseapp.com';
 export default {
     name: "ChatGroup",
     data() {
@@ -36,7 +37,7 @@ export default {
             user: '',
             message: '',
             messages: [],
-            socket : io('localhost:3001')
+            socket : io(socketURL)
         }
     },
     methods: {

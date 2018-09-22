@@ -4,6 +4,7 @@ import Login from '../Views/Login';
 import Home from '../Views/Home';
 import Deploy from '../Views/Deploy';
 import Chats from '../Views/Chats';
+import Contacts from '../Views/Contacts';
 import Callback from '../components/Callback';
 
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/home',
       name: 'Home',
       component: Home,
+    },
+    {
+      path: '/contacts',
+      name: 'Contacts',
+      component: Contacts,
     },
     {
       path: '/deploy',
