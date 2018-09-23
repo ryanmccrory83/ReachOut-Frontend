@@ -6,6 +6,7 @@
             <div class="login-buttons">
                 <a href="" class="login-button">Login</a>
                 <a href="" class="sign-out-button">Sign Up</a>
+                <a href="" class="about">About ReachOut</a>
             </div>
             
         </div>
@@ -77,5 +78,12 @@ export default {
     /* background-color: white; */
     color: red;
     box-shadow: .5em .5em .1em black;
+}
+.about {
+    display: flex;  
+    justify-content: center;
+    color: red;
+    font-weight: bolder;
+    text-shadow: .1em .1em black;
 }
 </style>
