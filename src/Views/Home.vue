@@ -6,7 +6,7 @@
         <div class="links">
             <img src="https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/17966271_10209963583900817_8300406579102339175_o.jpg?_nc_cat=0&oh=ceb7c33ed49d44974433849172d7c186&oe=5C14E04B" alt="Username" class="user-image">
             <a href="" class="links-link">NOTIFICATIONS</a>
-            <a href="./Contacts" class="links-link">CONTACTS (<img src="../assets/user-icon.png" alt="" class="contacts-icon"> )</a>
+            <a href="./Contacts" class="links-link" >CONTACTS (<img src="../assets/user-icon.png" alt="" class="contacts-icon">) </a>
             <a href="./Deploy" class="links-link">REACHOUT</a>
             <button type="submit" class="log-out-button" href="./Login">Log Out</button>
         </div>
@@ -16,7 +16,27 @@
 
 <script>
 export default {
-    name: 'Home'
+    name: 'Home',
+    data () {
+        return {
+            // name: 'Contacts',
+            reachoutURL:
+                "https://reachout-backend.herokuapp.com/user/",
+            userData: [],
+        }
+    },
+    mounted() {
+        fetch(this.reachoutURL, {
+            method: "get",
+            mode: "cors",
+            headers: new Headers({ "Content-Type": "application/json" })
+        })
+            .then(resp => resp.json())
+            .then(resp => {
+                console.log(resp);
+                this.userData = resp.user;
+            });
+    },
 }
 </script>
 
