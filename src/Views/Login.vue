@@ -6,9 +6,22 @@
                 <h1 class="login-h1">Welcome to ReachOut</h1>
             </div>
             <div class="login-buttons">
-                <b-button  v-b-modal.signup-modal class="btn-default mt-4 mb-4">Sign Up</b-button>
+                <b-button
+                    class="btn btn-danger mt-5"
+                    v-if="!authenticated"
+                    @click="login()">
+                    Log In
+                </b-button>
+
+                <b-button
+                    class="btn btn-danger btn-margin mt-5"
+                    v-if="authenticated"
+                    @click="logout()">
+                    Log Out
+                </b-button>
+                <b-button  v-b-modal.signup-modal class="mt-4 mb-4" variant="default">Sign Up</b-button>
                 <SignUpModal />   
-                <b-button v-b-modal.about-modal class="btn btn-primary">About ReachOut</b-button>
+                <b-button v-b-modal.about-modal class="btn" variant="primary">About ReachOut</b-button>
                 <AboutModal />
             </div>
         </div>
@@ -21,16 +34,33 @@
 <script>
 import SignUpModal from '../components/SignUpModal.vue'
 import AboutModal from '../components/AboutModal.vue'
+import auth0 from 'auth0-js'
+import AuthService from '../Auth/AuthService'
+
+const auth = new AuthService()
+
+const { login, logout, authenticated, authNotifier } = auth
 export default {
     name: 'Login',
     components: {
         SignUpModal,
         AboutModal
     },
+    data () {
+        authNotifier.on('authChange', authState => {
+        this.authenticated = authState.authenticated
+        })
+        return {
+        auth,
+        authenticated
+        }
+    },
     methods: {
         showModal () {
             this.$refs.myModalRef.show()
-        }
+        },
+        login,
+        logout
     }
 };
 </script>

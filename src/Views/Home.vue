@@ -8,21 +8,46 @@
             <a href="./Notifications" class="links-link">NOTIFICATIONS</a>
             <a href="./Contacts" class="links-link" >CONTACTS (<img src="../assets/user-icon.png" alt="" class="contacts-icon">) </a>
             <a href="./Deploy" class="links-link">REACHOUT</a>
-            <button type="submit" class="log-out-button" href="./Login">Log Out</button>
+            <b-button
+                class="btn mt-4"
+                variant="danger"
+                v-if="!authenticated"
+                @click="login()">
+                Log In
+            </b-button>
+
+            <b-button
+                class="btn mt-4"
+                variant="danger"
+                v-if="authenticated"
+                @click="logout()">
+                Log Out
+            </b-button>
         </div>
         
     </div>
 </template>
 
 <script>
+import auth0 from 'auth0-js'
+import AuthService from '../Auth/AuthService'
+
+const auth = new AuthService()
+
+const { login, logout, authenticated, authNotifier } = auth
 export default {
     name: 'Home',
     data () {
+        authNotifier.on('authChange', authState => {
+            this.authenticated = authState.authenticated
+        })
         return {
             // name: 'Contacts',
             reachoutURL:
                 "https://reachout-backend.herokuapp.com/user/",
             userData: [],
+            auth,
+            authenticated
         }
     },
     mounted() {
@@ -37,6 +62,10 @@ export default {
                 this.userData = resp.user;
             });
     },
+    methods: {
+        login,
+        logout 
+    }
 }
 </script>
 
@@ -60,16 +89,16 @@ export default {
     flex-flow: column wrap;
     align-items: center;
     justify-content: space-between;
-    margin-top: 5vh;
+    /* margin-top: 5vh; */
 }
 .user-image {
-    width: 15vw;
+    width: 12vw;
     margin-top: 3vh;
     border: .1em solid black;
     box-shadow: .5em .5em .1em black; 
 }
 .links-link {
-    margin-top: 5vh;
+    margin-top: 3vh;
     text-decoration: none; 
     color: white;
     text-shadow: .15em .1em red;

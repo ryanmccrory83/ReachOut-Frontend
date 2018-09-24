@@ -6,9 +6,9 @@
             Please feel free to use the chat room, post help markers to notify veterans if you feel suicidal as well as add veterans to your contact list.
             </p>
             <div slot="modal-footer" class="w-100">
-                <b-btn class="float-right" variant="danger" @click="hideModal">
+                <b-button class="float-right" variant="danger" @click="hideModal">
                     Close
-                </b-btn>
+                </b-button>
             </div>
         </b-modal>
     </div>
