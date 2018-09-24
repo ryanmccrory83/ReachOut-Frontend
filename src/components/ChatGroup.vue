@@ -29,7 +29,7 @@
 
 <script>
 import io from 'socket.io-client';
-var socketURL = 'localhost:3001' || 'https://reachout-91799.firebaseapp.com';
+var socketURL = 'https://reachout-backend.herokuapp.com/';
 export default {
     name: "ChatGroup",
     data() {
