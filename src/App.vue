@@ -13,14 +13,14 @@
           </router-link> -->
 
           <button
-            class="log-out-button"
+            class="btn btn-danger"
             v-if="!authenticated"
             @click="login()">
               Log In
           </button>
 
           <button
-            class="btn btn-primary btn-margin"
+            class="btn btn-danger btn-margin"
             v-if="authenticated"
             @click="logout()">
               Log Out

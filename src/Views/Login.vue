@@ -2,13 +2,15 @@
     <div class="login-screen">
         <div class="login">
             <img src="../assets/ReachOutLogo.png" alt="" class="login-logo">
-            <h1 class="login-h1">Welcome to ReachOut</h1>
-            <div class="login-buttons">
-                <a href="" class="login-button">Login</a>
-                <a href="" class="sign-out-button">Sign Up</a>
-                <a href="" class="about">About ReachOut</a>
+            <div class="h1-div">
+                <h1 class="login-h1">Welcome to ReachOut</h1>
             </div>
-            
+            <div class="login-buttons">
+                <b-button  v-b-modal.signup-modal class="btn-default mt-4 mb-4">Sign Up</b-button>
+                <SignUpModal />   
+                <b-button v-b-modal.about-modal class="btn btn-primary">About ReachOut</b-button>
+                <AboutModal />
+            </div>
         </div>
         
     </div>
@@ -17,12 +19,18 @@
 </template>
 
 <script>
+import SignUpModal from '../components/SignUpModal.vue'
+import AboutModal from '../components/AboutModal.vue'
 export default {
     name: 'Login',
-    data() {
-        return {
-        msg: 'Welcome to Your Vue.js App'
-        };
+    components: {
+        SignUpModal,
+        AboutModal
+    },
+    methods: {
+        showModal () {
+            this.$refs.myModalRef.show()
+        }
     }
 };
 </script>
@@ -44,10 +52,20 @@ export default {
     width: 10vw;
     margin-top: 3em;
 }
+.h1-div {
+    display: flex;
+    justify-content: center;
+}
 .login-h1 {
     color: red;
-    text-shadow: .1em .1em black;
+    text-shadow: .2em .1em black;
+    text-align: center;
     margin-top: 1em;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Notable', sans-serif;
+    width: 20vw;
+
+
 }
 .login-buttons {
     display: flex;
@@ -55,35 +73,8 @@ export default {
     align-items: center space-between;
     font-weight: bolder;
 }
-.login-button {
-    display: flex;
-    justify-content: center;
-    /* border: 1px solid black; */
-    border-radius: 5em;
-    margin: 2em 2em 2em 2em;
-    padding: 1em 1em 1em 1em;
-    text-decoration: none;
-    /* background-color: white; */
-    background-image: radial-gradient(white, blue);
-    color: red;
-    box-shadow: .5em .5em .1em black;
+SignUpModal {
+    margin-bottom: 1em;
 }
-.sign-out-button {
-    /* border: 1px solid black; */
-    border-radius: 5em;
-    margin: 2em 2em 2em 2em;
-    padding: 1em 1em 1em 1em;
-    text-decoration: none;
-    background-image: radial-gradient(white, blue);
-    /* background-color: white; */
-    color: red;
-    box-shadow: .5em .5em .1em black;
-}
-.about {
-    display: flex;  
-    justify-content: center;
-    color: red;
-    font-weight: bolder;
-    text-shadow: .1em .1em black;
-}
+
 </style>
