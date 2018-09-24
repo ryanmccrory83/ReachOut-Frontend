@@ -45,11 +45,53 @@
 <script>
 export default {
     name: 'SignUpModal',
+    data() {
+        return {
+            reachoutURL: "https://reachout-backend.herokuapp.com/user/",
+            form: {
+                username: "",
+                password: "",
+                email: "",
+                first_name: "",
+                last_name: "",
+                image_url: "",
+                military_branch: "",
+            }
+        };
+    },
     methods: {
+        onSubmit(evt) {
+            this.form.user_id = this.$route.query.user;
+            evt.preventDefault();
+            return fetch(this.reachoutURL, {
+                method: "post",
+                headers: new Headers({ "Content-Type": "application/json" }),
+                body: JSON.stringify(this.form)
+            })
+                .then(console.log(this.form))
+                .then(resp => {
+                    console.log(resp);
+                    if (!resp.ok) {
+                        if (resp.status >= 400 || resp.status < 500) {
+                            return resp.json().then(data => {
+                                const err = { errorMessage: data.message };
+                                throw err;
+                            });
+                        }
+                        const err = { errorMessage: "Failed to create user profile" };
+                        throw err;
+                    }
+                    return resp.json();
+                });
+        },
+        showModal () {
+            this.$refs.myModalRef.show()
+        },
         hideModal () {
             this.$root.$emit('bv::hide::modal', 'signup-modal');
         }
     }
+    
 }
 </script>
 

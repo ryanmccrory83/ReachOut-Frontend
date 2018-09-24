@@ -12,7 +12,7 @@
               Home
           </router-link> -->
 
-          <button
+          <!-- <button
             class="btn btn-danger"
             v-if="!authenticated"
             @click="login()">
@@ -24,7 +24,7 @@
             v-if="authenticated"
             @click="logout()">
               Log Out
-          </button>
+          </button> -->
 
         </div>
       </div>
@@ -77,5 +77,5 @@ export default {
 </style>
 
 .btn-margin {
-  margin-top: 7px
+  margin-top: 7px;
 }
