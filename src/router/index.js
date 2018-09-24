@@ -6,6 +6,7 @@ import Deploy from '../Views/Deploy';
 import Chats from '../Views/Chats';
 import Contacts from '../Views/Contacts';
 import Callback from '../components/Callback';
+import Notifications from '../Views/Notifications.vue'
 
 
 Vue.use(Router);
@@ -38,6 +39,11 @@ export default new Router({
       path: '/chats',
       name: 'Chats',
       component: Chats,
+    },
+    {
+      path: '/notifications',
+      name: 'Notifications',
+      component: Notifications
     },
     {
       path: '/callback',

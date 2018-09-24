@@ -3,7 +3,7 @@
     <gmap-map
       :center="center"
       :zoom="10"
-      style="width:30vw;  height: 40vh;"
+      style="width:40vw;  height: 40vh;"
       class="gmap"
     >
       <gmap-marker
@@ -43,6 +43,7 @@ export default {
 
   mounted() {
     this.geolocate();
+    this.setPlace(this.geolocate());
   },
 
   methods: {

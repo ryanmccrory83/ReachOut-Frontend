@@ -38,7 +38,7 @@ export default {
             });
     },
     methods: {
-        // branchOfServer() => {
+        // branchOfService() => {
         //     return {
         //         if({{user.military_branch}} === Army){
         //             h4.color === Tan
@@ -75,8 +75,7 @@ h1 {
     align-items: flex-start;
     list-style: none;
     width: 30vw;
-    /* margin-left: 24.5vw; */
-    border: 1px solid black;
+    margin-left: -6vw;
 }
 .user {
     display: flex;
@@ -84,8 +83,7 @@ h1 {
     justify-content: space-around;
     width: 30vw;
     padding: 1em;
-    background-color: gainsboro;
-    opacity: .7;
+    background-color: rgb(220, 220, 220, 0.7);
 }
 .user-img {
     height: 15vh;
