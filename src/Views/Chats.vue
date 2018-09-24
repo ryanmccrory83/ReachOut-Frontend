@@ -4,7 +4,7 @@
             <a href="./Home" class="back-to-home">Back to Home</a>
         </div>
         <ChatGroup />
-        <b-button v-b-modal.contact-modal class="btn btn-primary">Add Contact</b-button>
+        <b-button v-b-modal.contact-modal class="btn" variant="danger">Add Contact</b-button>
         <!-- <MapContainer /> -->
         <AddContactModal />
     </div>

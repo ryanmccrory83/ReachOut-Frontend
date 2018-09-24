@@ -1,15 +1,19 @@
 <template>
-    <div class="contacts"><span>
-        <h1>Contacts</h1>
-        <ul class="user-list" v-for="user in userData" v-bind:key= "user.id" >
-            <li class="user">
-                <img class="user-img" :src= 'user.image_url' alt="">
-                <h3 class="user-name">{{ user.first_name }} {{ user.last_name }}</h3>
-                <h4 class="user-branch">{{ user.military_branch }}</h4>
-            </li>  
-        </ul>
-        <a class="contacts-home" href="./home">HOME</a>
-    </span></div>
+        <div class="contacts"><span>
+            <h1>Contacts</h1>
+            <div>
+                <ul class="user-list" v-for="user in userData" v-bind:key= "user.id" >
+                    <li class="user">
+                        <img class="user-img" :src= 'user.image_url' alt="">
+                        <h3 class="user-name">{{ user.first_name }} {{ user.last_name }}</h3>
+                        <h4 class="user-branch">{{ user.military_branch }}</h4>
+                    </li>  
+                </ul>
+            </div>
+            <div>
+            <a class="contacts-home" href="./home">HOME</a>
+            </div>
+        </span></div>
 </template>
 
 <script>
@@ -59,6 +63,7 @@ export default {
     display: flex;
     flex-flow: column wrap;
     align-content: center;
+    overflow-y: scroll;
 }
 h1 {
     display: flex;

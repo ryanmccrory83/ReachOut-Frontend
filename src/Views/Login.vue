@@ -87,8 +87,8 @@ export default {
     justify-content: center;
 }
 .login-h1 {
-    color: red;
-    text-shadow: .2em .1em black;
+    color: white;
+    text-shadow: .2em .1em red;
     text-align: center;
     margin-top: 1em;
     font-family: 'Montserrat', sans-serif;
