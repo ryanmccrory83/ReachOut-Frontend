@@ -61,4 +61,8 @@ export default {
 </script>
 
 <style>
+.card {
+    width: 30vw;
+    height: 80vh;
+}
 </style>

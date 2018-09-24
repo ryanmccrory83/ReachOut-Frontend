@@ -4,8 +4,8 @@
             <a href="./Home" class="back-to-home">Back to Home</a>
         </div>
         <ChatGroup />
-        <b-button v-b-modal.contact-modal class="contact-button">Add Contact</b-button>
-        <MapContainer />
+        <b-button v-b-modal.contact-modal class="btn btn-primary">Add Contact</b-button>
+        <!-- <MapContainer /> -->
         <AddContactModal />
     </div>
 </template>
@@ -13,13 +13,13 @@
 <script>
 
 import ChatGroup from '../components/ChatGroup.vue'
-import MapContainer from '../components/MapContainer.vue'
+// import MapContainer from '../components/MapContainer.vue'
 import AddContactModal from '../components/AddContactModal'
 export default {
     name: 'Chats',
     components: {
         ChatGroup,
-        MapContainer,
+        // MapContainer,
         AddContactModal
     },
     methods: {
@@ -55,8 +55,8 @@ export default {
     display: flex;
     flex-flow: column wrap;
     border: .1em solid black;
-    height: 40vh;
-    width: 30vw;
+    height: 30vh;
+    width: 40vw;
     justify-content: center;
 }
 .contact-button {
