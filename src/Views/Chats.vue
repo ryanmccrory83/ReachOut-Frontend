@@ -4,7 +4,7 @@
             <a href="./Home" class="back-to-home">Back to Home</a>
         </div>
         <ChatGroup />
-        <b-button v-b-modal.contact-modal class="btn" variant="danger">Add Contact</b-button>
+        <b-button v-b-modal.contact-modal class="btn mt3" variant="primary">Add Contact</b-button>
         <!-- <MapContainer /> -->
         <AddContactModal />
     </div>
@@ -38,8 +38,14 @@ export default {
 }
 .back-to-home {
     text-decoration: none;
-    font-weight: bolder;
     color: white;
+    font-weight: bolder;
+    text-shadow: .1em .1em black;
+    border: .1em solid red;
+    border-radius: .4em;
+    background-color: red;
+    width: 10vw;
+    padding: .2em;
 }
 .chats {
     display: flex;
@@ -50,14 +56,6 @@ export default {
     background-position: center; 
     width: 100vw;
     height: 100vh;
-}
-.message-board {
-    display: flex;
-    flex-flow: column wrap;
-    border: .1em solid black;
-    height: 30vh;
-    width: 40vw;
-    justify-content: center;
 }
 .contact-button {
     margin: 2vh 0vw 2vh 10vw;
