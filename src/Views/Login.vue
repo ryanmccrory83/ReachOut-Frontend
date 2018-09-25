@@ -21,7 +21,7 @@
                 </b-button>
                 <b-button  v-b-modal.signup-modal class="mt-4 mb-4" variant="default">Sign Up</b-button>
                 <SignUpModal />   
-                <b-button v-b-modal.about-modal class="btn" variant="primary">About ReachOut</b-button>
+                <b-button v-b-modal.about-modal class="btn text-center" variant="primary">About ReachOut</b-button>
                 <AboutModal />
             </div>
         </div>
@@ -103,8 +103,9 @@ export default {
     align-items: center space-between;
     font-weight: bolder;
 }
-SignUpModal {
-    margin-bottom: 1em;
+.btn {
+    width: 10vw;
+    justify-content: center;
 }
 
 </style>

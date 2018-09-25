@@ -10,15 +10,15 @@
             <a href="./Chats" class="links-link">CHAT LOUNGE</a>
             <a href="./Contacts" class="links-link" >CONTACTS (<img src="../assets/user-icon.png" alt="" class="contacts-icon"> {{ userData.length }}) </a>
             <b-button
-                class="btn mt-5"
+                class="btn mt-4"
                 variant="danger"
                 v-if="!authenticated"
                 @click="login()">
-                Log Out
+                Log In
             </b-button>
 
             <b-button
-                class="btn mt-5"
+                class="btn mt-4"
                 variant="danger"
                 v-if="authenticated"
                 @click="logout()">

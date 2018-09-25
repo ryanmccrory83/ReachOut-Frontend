@@ -1,12 +1,16 @@
 <template>
         <div class="contacts">
-            <h1>Contacts</h1>
+            <h1 class="contacts-h1">Contacts</h1>
             <div class="user-container">
                 <ul class="user-list" v-for="user in userData" v-bind:key= "user.id" >
                     <li class="user">
                         <img class="user-img" :src= 'user.image_url' alt="">
                         <h3 class="user-name">{{ user.first_name }} {{ user.last_name }}</h3>
-                        <h4 class="user-branch">{{ user.military_branch }}</h4>
+                        <img class="user-branch" v-if="user.military_branch==='Army'" src="../assets/army-logo.png"/>
+                        <img class="user-branch" v-if="user.military_branch==='Navy'" src="../assets/navy-logo.png"/>
+                        <img class="user-branch" v-if="user.military_branch==='Air Force'" src="../assets/airforce-logo.png"/>
+                        <img class="user-branch" v-if="user.military_branch==='Coast Guard'" src="../assets/coast-guard-logo.png"/>
+                        <img class="user-branch" v-if="user.military_branch==='Marines'" src="../assets/usmc-logo.png"/>
                     </li>  
                 </ul>
             </div>
@@ -64,12 +68,12 @@ export default {
     flex-flow: column wrap;
     align-content: center;
 }
-h1 {
+.contacts-h1 {
     display: flex;
     justify-content: center;
     font-size: 4em;
     margin: 0vh 0vw 2vh 0vw;
-    color: red;
+    color: red !important;
     text-shadow: .1em .1em black;
 }
 .user-container {
@@ -77,7 +81,7 @@ h1 {
     flex-flow: column;
     align-items: center;
     height: 80vh;
-    width: 50vw;
+    width: 100vw;
     overflow-y: scroll;
     margin: -1vh 0vw 0vw 10vw;
 }
@@ -100,18 +104,20 @@ h1 {
 }
 .user-img {
     height: 15vh;
-    width: 8vw;
+    width: 33%;
     border: .2em solid black;
-    margin-right: 3em;
+    margin-right: 1em;
 }
 .user-name {
+    width: 33%;
     color: black;
     font-weight: bolder;
-    margin-right: 2em;
+    margin-right: 1em;
 }
 .user-branch {
     color: red;
     font-weight: bold;
+    width: 33%;
 }
 .home-button-container {
     display: flex;

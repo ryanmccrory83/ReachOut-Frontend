@@ -33,7 +33,7 @@ export default {
         height: 100vh;
     }
     h1 {
-        color: red;
+        color: red !important;
         font-weight: bolder;
     }
     .home-button-container {
