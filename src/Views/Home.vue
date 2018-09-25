@@ -6,8 +6,9 @@
         <div class="links">
             <img src="https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/17966271_10209963583900817_8300406579102339175_o.jpg?_nc_cat=0&oh=ceb7c33ed49d44974433849172d7c186&oe=5C14E04B" alt="Username" class="user-image">
             <a href="./Notifications" class="links-link">NOTIFICATIONS</a>
-            <a href="./Contacts" class="links-link" >CONTACTS (<img src="../assets/user-icon.png" alt="" class="contacts-icon">) </a>
             <a href="./Deploy" class="links-link">REACHOUT</a>
+            <a href="./Chats" class="links-link">CHAT LOUNGE</a>
+            <a href="./Contacts" class="links-link" >CONTACTS (<img src="../assets/user-icon.png" alt="" class="contacts-icon"> {{ userData.length }}) </a>
             <b-button
                 class="btn mt-4"
                 variant="danger"
@@ -58,7 +59,7 @@ export default {
         })
             .then(resp => resp.json())
             .then(resp => {
-                console.log(resp);
+                console.log(resp.user);
                 this.userData = resp.user;
             });
     },
@@ -98,7 +99,7 @@ export default {
     box-shadow: .5em .5em .1em black; 
 }
 .links-link {
-    margin-top: 3vh;
+    margin-top: 5vh;
     text-decoration: none; 
     color: white;
     text-shadow: .15em .1em red;
@@ -111,13 +112,8 @@ export default {
 .home-logo {
     width: 15vw;
 }
-.log-out-button {
-    height: 5vh;
+.btn {
     width: 10vw;
-    margin-top: 5vh;
-    box-shadow: .5em .5em .1em black;
-    border-radius: 5em;
-    background-image: radial-gradient(white, blue);
 }
 
 </style>

@@ -2,42 +2,43 @@
         <!-- Modal Component -->
     <div>
         <b-modal id="signup-modal" centered title="Add User Information" ok-only>
-            <form @submit="submit">
+            <form @submit="onSubmit">
                 <div>
                     <label for="username">Username</label>
-                    <input type="text" name="username" id="username">
+                    <input v-model="form.username" type="text" name="username" id="username" value="">
                 </div>
                 <div>
                     <label for="password">Password</label>
-                    <input type="text" name="password" id="password">
+                    <input v-model="form.password" type="text" name="password" id="password" value="">
                 </div>
                 <div>
                     <label for="email">Email Address</label>
-                    <input type="text" name="email" id="email">
+                    <input type="text" name="email" id="email" value="">
                 </div>
                 <div>
                     <label for="first-name">First Name</label>
-                    <input type="text" name="first-name" id="first-name">
+                    <input type="text" name="first-name" id="first-name" value="">
                 </div>
                 <div>
                     <label for="last-name">Last Name</label>
-                    <input type="text" name="last-name" id="last-name">
+                    <input type="text" name="last-name" id="last-name" value="">
                 </div>
                 <div>
                     <label for="user-image">User Image</label>
-                    <input type="text" name="user-image" id="user-image">
+                    <input type="text" name="user-image" id="user-image" value="">
                 </div>
                 <div>
                     <label for="military-branch">Military Branch</label>
-                    <input type="text" name="military-branch" id="military-branch">
+                    <input type="text" name="military-branch" id="military-branch" value="">
+                </div>
+                <div slot="modal-footer" class="w-100">
+                    <b-btn type="submit">Sign Up</b-btn>
+                    <b-btn class="float-right" variant="danger" @click="hideModal">
+                        Close
+                    </b-btn>
+                    <p class="message"></p>
                 </div>
             </form>
-            <div slot="modal-footer" class="w-100">
-                <b-btn type="submit">Sign Up</b-btn>
-                <b-btn class="float-right" variant="danger" @click="hideModal">
-                    Close
-                </b-btn>
-            </div>
         </b-modal>
     </div>
 </template>
@@ -61,8 +62,10 @@ export default {
     },
     methods: {
         onSubmit(evt) {
-            this.form.user_id = this.$route.query.user;
+            this.form.username = this.$route.query.username;
             evt.preventDefault();
+            console.log(this.form);
+            console.log(Object.values(this.form));
             return fetch(this.reachoutURL, {
                 method: "post",
                 headers: new Headers({ "Content-Type": "application/json" }),
@@ -81,6 +84,11 @@ export default {
                         const err = { errorMessage: "Failed to create user profile" };
                         throw err;
                     }
+                    let message = document.querySelector('.message');
+                    message.textContent = "You've successfully signed up for ReachOut!";
+                    setTimeout(() => {
+                        message.textContent = "";
+                    }, 4000);
                     return resp.json();
                 });
         },
