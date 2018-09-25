@@ -2,7 +2,10 @@
     <div class="notifications">
         <h1>NOTIFICATIONS</h1>
         <MapContainer />
-        <a href="./home">HOME</a>
+        <div class="home-button-container">
+            <a href="./home" class="map-home-button">HOME</a>
+        </div>
+        
     </div>
 </template>
 
@@ -30,12 +33,23 @@ export default {
         height: 100vh;
     }
     h1 {
-        color: red;
+        color: red !important;
         font-weight: bolder;
     }
-    a {
-       align-items: center; 
-       color: red;
-       font-weight: bolder;
+    .home-button-container {
+        display: flex;
+        justify-content: center;
     }
+    .map-home-button {
+        display: flex;
+        justify-content: center; 
+        color: white;
+        font-weight: bolder;
+        text-shadow: .1em .1em black;
+        border: .1em solid blue;
+        border-radius: .4em;
+        background-color: blue;
+        width: 10vw;
+        padding: .2em;
+        }
 </style>
