@@ -19,8 +19,10 @@ export default class AuthService {
     auth0 = new auth0.WebAuth({
       domain: 'reach-out.auth0.com',
       clientID: 'auRV5jvDoeuBweySL4xIMxYtzlszrE3v',
+      //local developement callback//
       // redirectUri: 'https://reachout-91799.firebaseapp.com/callback' || 'http://localhost:3000/callback',
-      redirectUri: 'https://localhost:8080/callback' || 'http://localhost:3000/callback',
+      //production callback//
+      redirectUri: 'http://localhost:8080/callback' || 'http://localhost:3000/callback',
       responseType: 'token id_token',
       scope: 'openid'
     })
