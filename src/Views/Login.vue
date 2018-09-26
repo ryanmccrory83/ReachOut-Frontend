@@ -7,14 +7,14 @@
             </div>
             <div class="login-buttons">
                 <b-button
-                    class="btn btn-danger mt-5"
+                    class="btn btn-danger mt-5 login-page-btn"
                     v-if="!authenticated"
                     @click="login()">
                     Log In
                 </b-button>
 
                 <b-button
-                    class="btn btn-danger btn-margin mt-5"
+                    class="btn btn-danger btn-margin mt-5 login-page-btn"
                     v-if="authenticated"
                     @click="logout()">
                     Log Out
@@ -103,9 +103,9 @@ export default {
     align-items: center space-between;
     font-weight: bolder;
 }
-.btn {
-    width: 10vw;
-    justify-content: center;
+.login-page-btn {
+    width: 12vw;
+    justify-content: center !important;
 }
 
 </style>
