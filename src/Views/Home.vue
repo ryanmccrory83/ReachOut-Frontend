@@ -5,12 +5,12 @@
         </div>
         <div class="links">
             <img src="https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/17966271_10209963583900817_8300406579102339175_o.jpg?_nc_cat=0&oh=ceb7c33ed49d44974433849172d7c186&oe=5C14E04B" alt="Username" class="user-image">
-            <a href="./Notifications" class="links-link">NOTIFICATIONS</a>
+            <a href="./Notifications" class="links-link">NOTIFICATIONS (1)</a>
             <a href="./Deploy" class="links-link">REACHOUT</a>
             <a href="./Chats" class="links-link">CHAT LOUNGE</a>
             <a href="./Contacts" class="links-link" >CONTACTS (<img src="../assets/user-icon.png" alt="" class="contacts-icon"> {{ userData.length }}) </a>
             <b-button
-                class="btn mt-4"
+                class="btn mt-4 home-login-btn"
                 variant="danger"
                 v-if="!authenticated"
                 @click="login()">
@@ -18,7 +18,7 @@
             </b-button>
 
             <b-button
-                class="btn mt-4"
+                class="btn mt-4 home-login-btn"
                 variant="danger"
                 v-if="authenticated"
                 @click="logout()">
@@ -112,7 +112,7 @@ export default {
 .home-logo {
     width: 15vw;
 }
-.btn {
+.login {
     width: 10vw;
 }
 
