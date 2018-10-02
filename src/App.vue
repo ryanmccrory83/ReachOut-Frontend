@@ -1,12 +1,10 @@
 
 
 <template>
-    <!-- <div class="container"> -->
       <router-view 
         :auth="auth" 
         :authenticated="authenticated">
       </router-view>
-    <!-- </div> -->
 </template>
 
 <script>
