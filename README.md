@@ -19,7 +19,9 @@ npm run dev
 npm run deploy to run build and deploy scripts simulaneously when running in production mode for firebase changes
 
 #note:
-You will need to comment out the production callback url and uncomment the development callback url in authService.js in order to get the Auth0 to work on your local server.  Reverse the steps if you would like to run this application in production.
+You will need to comment out the production callback url and uncomment the development callback url in authService.js 
+in order to get the Auth0 to work on your local server.  Reverse the steps if you would like to run 
+this application in production.
 ```
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
