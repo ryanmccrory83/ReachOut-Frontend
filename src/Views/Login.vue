@@ -19,9 +19,9 @@
                     @click="logout()">
                     Log Out
                 </b-button>
-                <b-button  v-b-modal.signup-modal class="mt-4 mb-4" variant="default">Sign Up</b-button>
+                <b-button  v-b-modal.signup-modal class="mt-4 mb-4 login-page-btn" variant="default">Sign Up</b-button>
                 <SignUpModal />   
-                <b-button v-b-modal.about-modal class="btn text-center" variant="primary">About ReachOut</b-button>
+                <b-button v-b-modal.about-modal class="btn text-center login-page-btn" variant="primary">About ReachOut</b-button>
                 <AboutModal />
             </div>
         </div>
@@ -76,7 +76,8 @@ export default {
 .login {
     display:flex;
     flex-flow: column wrap;
-    align-items: center;
+    align-items: center !important;
+    width: 100vw;
 }
 .login-logo {
     width: 10vw;
@@ -89,7 +90,7 @@ export default {
 .login-h1 {
     color: white;
     text-shadow: .2em .1em red;
-    text-align: center;
+    text-align: center !important;
     margin-top: 1em;
     font-family: 'Montserrat', sans-serif;
     font-family: 'Notable', sans-serif;
