@@ -9,21 +9,19 @@
             <a href="./Deploy" class="links-link">REACHOUT</a>
             <a href="./Chats" class="links-link">CHAT LOUNGE</a>
             <a href="./Contacts" class="links-link" >CONTACTS (<img src="../assets/user-icon.png" alt="" class="contacts-icon"> {{ userData.length }}) </a>
-            <b-button
-                class="btn mt-4 home-login-btn"
-                variant="danger"
+            <!-- <button
+                class="home-login-btn"
                 v-if="!authenticated"
                 @click="login()">
                 Log In
-            </b-button>
+            <button> -->
 
-            <b-button
-                class="btn mt-4 home-login-btn"
-                variant="danger"
+            <button
+                class="home-login-btn"
                 v-if="authenticated"
                 @click="logout()">
                 Log Out
-            </b-button>
+            <button>
         </div>
         
     </div>
@@ -90,16 +88,18 @@ export default {
     flex-flow: column wrap;
     align-items: center;
     justify-content: space-between;
+    height: 50%;
     /* margin-top: 5vh; */
 }
 .user-image {
-    width: 12vw;
+    width: 7%;
+    height: auto;
     margin-top: 3vh;
     border: .1em solid black;
     box-shadow: .5em .5em .1em black; 
 }
 .links-link {
-    margin-top: 5vh;
+    margin-top: 3vh;
     text-decoration: none; 
     color: white;
     text-shadow: .15em .1em red;
@@ -110,10 +110,18 @@ export default {
     height: 2vh;
 }
 .home-logo {
-    width: 15vw;
+    width: 10vh;
+    height: 10vh;
+    margin-top: -15vh;
 }
-.login {
+.home-login-btn {
+    display: flex;
     width: 10vw;
+    height: 6vh;
+    border-radius: .25rem;
+    margin-top: 3vh;
+    color: white;
+    background-color: red;
 }
 
 </style>

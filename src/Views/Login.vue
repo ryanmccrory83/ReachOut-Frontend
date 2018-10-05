@@ -81,7 +81,7 @@ export default {
 }
 .login-logo {
     width: 10vw;
-    margin-top: 3em;
+    margin-top: 15vh;
 }
 .h1-div {
     display: flex;
@@ -89,14 +89,12 @@ export default {
 }
 .login-h1 {
     color: white;
-    text-shadow: .2em .1em red;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     text-align: center !important;
     margin-top: 1em;
     font-family: 'Montserrat', sans-serif;
     font-family: 'Notable', sans-serif;
     width: 20vw;
-
-
 }
 .login-buttons {
     display: flex;
